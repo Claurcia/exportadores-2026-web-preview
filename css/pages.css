@@ -1,12 +1,13 @@
 /* Componentes de las páginas internas (galería con voto e inscripción) en el lenguaje festivent:
    bordes de 1.5 px en vez de sombras, píldoras, stickers, Nunito en títulos (mayúscula inicial). Los selectores son los que espera
    Propuestas/shared/app.js. */
-.page-hero { position: relative; background: var(--cel3); overflow: hidden; }
+/* Heros de página en azul oscuro (pedido de Carlos: no bajar todo en blanco y celeste) */
+.page-hero { position: relative; background: var(--azul2); color: #fff; overflow: hidden; }
 .page-hero .wbg { position: absolute; inset: 0; pointer-events: none; }
 .page-hero .container { position: relative; display: grid; gap: 1rem; justify-items: center; text-align: center; padding: clamp(1.6rem, 4vw, 3rem) 0 clamp(1.4rem, 3vw, 2.4rem); }
-.page-hero h1 { color: var(--azul); font-size: clamp(2rem, 6vw, 4.4rem); font-weight: 800; }
-.page-hero h1 small { display: block; color: var(--rojo); font-size: .6em; margin-top: .2rem; }
-.page-hero p { color: var(--gris); max-width: 52ch; font-size: clamp(1rem, 2vw, 1.15rem); }
+.page-hero h1 { color: #fff; font-size: clamp(2rem, 6vw, 4.4rem); font-weight: 900; }
+.page-hero h1 small { display: block; color: var(--cel); font-size: .6em; margin-top: .2rem; }
+.page-hero p { color: rgba(255,255,255,.88); max-width: 52ch; font-size: clamp(1rem, 2vw, 1.15rem); }
 .section { padding: clamp(40px, 6vw, 80px) 0; }
 
 /* Botones del JS compartido (.btn) = píldoras */
@@ -49,19 +50,20 @@
 .result-count strong { color: var(--azul); font-family: var(--display); }
 
 /* Ranking */
-.ranking { margin-top: 1.5rem; background: #fff; border: 1.5px solid var(--azul); border-radius: var(--r); padding: 1.1rem; display: grid; gap: .9rem; }
+.ranking { margin-top: 1.5rem; background: var(--azul2); color: #fff; border-radius: var(--r); padding: 1.1rem; display: grid; gap: .9rem; }
+.ranking .muted { color: rgba(255,255,255,.75); }
 .ranking__head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-.ranking__head h3 { display: inline-flex; gap: .5rem; align-items: center; color: var(--azul); }
+.ranking__head h3 { display: inline-flex; gap: .5rem; align-items: center; color: #fff; }
 .ranking__head .live { width: 10px; height: 10px; border-radius: 50%; background: var(--rojo); animation: pulse 1.8s infinite; }
 @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(217,38,46,.45); } 50% { box-shadow: 0 0 0 7px rgba(217,38,46,0); } }
 .ranking__list { display: flex; gap: .75rem; overflow-x: auto; scrollbar-width: none; padding-bottom: .25rem; }
 .ranking__list::-webkit-scrollbar { display: none; }
-.rank { flex: none; width: 156px; display: grid; gap: .4rem; text-decoration: none; color: inherit; background: var(--cel3); border-radius: 16px; padding: .6rem; position: relative; transition: transform .2s var(--ease); }
+.rank { flex: none; width: 156px; display: grid; gap: .4rem; text-decoration: none; color: inherit; background: rgba(255,255,255,.12); border-radius: 16px; padding: .6rem; position: relative; transition: transform .2s var(--ease); }
 .rank:hover { transform: translateY(-3px); }
 .rank img { aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; width: 100%; }
-.rank b { font: 800 .95rem/1.15 var(--display); color: var(--azul); }
-.rank small { color: var(--gris); font-variant-numeric: tabular-nums; }
-.rank:first-child { background: var(--azul); }
+.rank b { font: 800 .95rem/1.15 var(--display); color: #fff; }
+.rank small { color: rgba(255,255,255,.8); font-variant-numeric: tabular-nums; }
+.rank:first-child { background: var(--rojo); }
 .rank:first-child b { color: #fff; } .rank:first-child small { color: rgba(255,255,255,.8); }
 .rank__badge { position: absolute; top: .35rem; left: .35rem; z-index: 1; display: inline-grid; place-items: center; min-width: 28px; height: 26px; padding-inline: .4rem; border-radius: 8px; background: var(--rojo); color: #fff; font: 800 .8rem/1 var(--cond); }
 
@@ -167,13 +169,23 @@
 .tip h4 svg { width: 22px; height: 22px; color: var(--rojo); }
 .tip ul { margin: 0; padding-left: 1.1rem; color: var(--gris); font-size: 1rem; display: grid; gap: .3rem; }
 .tip img { border-radius: 16px; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 25%; }
+.tip--dark { background: var(--azul2); }
+.tip--dark h4 { color: #fff; } .tip--dark h4 svg { color: var(--cel); } .tip--dark ul { color: rgba(255,255,255,.9); }
+/* Cierre de la galería: banda azul con el panda (estas clases venían sin estilos de las propuestas viejas) */
+.cta-final { position: relative; overflow: hidden; background: var(--azul); color: #fff; padding: clamp(56px, 8vw, 100px) 0 0; }
+.cta-final .container { position: relative; display: grid; gap: 1rem; justify-items: start; padding-bottom: 190px; }
+.cta-final h2 { color: #fff; font-size: clamp(1.9rem, 4.6vw, 3.4rem); max-width: 18ch; }
+.cta-final p { color: rgba(255,255,255,.9); max-width: 46ch; font-size: clamp(1rem, 1.8vw, 1.15rem); }
+.cta-final .pill--giant { width: auto; min-height: 64px; font-size: clamp(1rem, 2vw, 1.3rem); padding-inline: 2rem; }
+.mascota--panda { position: absolute; right: 3%; bottom: 0; height: 200px; filter: drop-shadow(0 16px 24px rgba(0,0,0,.35)); }
+.glow { position: absolute; width: 42vw; height: 42vw; border-radius: 50%; background: radial-gradient(circle, rgba(95,179,232,.35), transparent 70%); pointer-events: none; }
 .success { display: none; text-align: center; background: #fff; border: 2px solid var(--azul); border-radius: var(--r); padding: 2.5rem 1.5rem; gap: 1rem; justify-items: center; }
 .success.is-visible { display: grid; }
 .success img { width: 160px; }
 .progress { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: 1.2rem; width: 100%; }
-.progress div { height: 8px; border-radius: 4px; background: var(--cel2); position: relative; overflow: hidden; }
-.progress div::after { content: ""; position: absolute; inset: 0; background: var(--azul); transform: scaleX(var(--p, 0)); transform-origin: left; transition: transform .4s var(--ease); }
-.progress-labels { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; font: 800 .78rem/1.2 var(--cond); letter-spacing: .06em; text-transform: uppercase; color: var(--azul); margin-top: .4rem; width: 100%; }
+.progress div { height: 8px; border-radius: 4px; background: rgba(255,255,255,.25); position: relative; overflow: hidden; }
+.progress div::after { content: ""; position: absolute; inset: 0; background: var(--cel); transform: scaleX(var(--p, 0)); transform-origin: left; transition: transform .4s var(--ease); }
+.progress-labels { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; font: 800 .78rem/1.2 var(--cond); letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-top: .4rem; width: 100%; }
 .toast { position: fixed; left: 50%; bottom: 1.2rem; translate: -50% 0; z-index: 80; background: var(--tinta); color: #fff; padding: .8rem 1.1rem; border-radius: 12px; font-size: .92rem; font-weight: 600; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; transform: translateY(8px); }
 .toast.is-visible { opacity: 1; transform: none; }
 
@@ -182,6 +194,8 @@
   .row-2 { grid-template-columns: 1fr 1fr; }
   .selects { grid-template-columns: 1fr 1fr auto; }
   .form-layout { grid-template-columns: 1.4fr 1fr; align-items: start; }
+  .cta-final .container { padding-bottom: clamp(56px, 8vw, 100px); padding-right: clamp(220px, 28vw, 380px); }
+  .mascota--panda { height: clamp(240px, 30vw, 360px); }
   .form-aside { position: sticky; top: 1rem; }
 }
 @media (min-width: 1024px) { .cards { grid-template-columns: repeat(3, 1fr); } }
