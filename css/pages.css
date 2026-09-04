@@ -177,7 +177,7 @@
 .cta-final h2 { color: #fff; font-size: clamp(1.9rem, 4.6vw, 3.4rem); max-width: 18ch; }
 .cta-final p { color: rgba(255,255,255,.9); max-width: 46ch; font-size: clamp(1rem, 1.8vw, 1.15rem); }
 .cta-final .pill--giant { width: auto; min-height: 64px; font-size: clamp(1rem, 2vw, 1.3rem); padding-inline: 2rem; }
-.mascota--panda { position: absolute; right: 3%; bottom: 0; height: 200px; filter: drop-shadow(0 16px 24px rgba(0,0,0,.35)); }
+.mascota { position: absolute; right: 3%; bottom: 0; height: 200px; filter: drop-shadow(0 16px 24px rgba(0,0,0,.35)); }
 .glow { position: absolute; width: 42vw; height: 42vw; border-radius: 50%; background: radial-gradient(circle, rgba(95,179,232,.35), transparent 70%); pointer-events: none; }
 .success { display: none; text-align: center; background: #fff; border: 2px solid var(--azul); border-radius: var(--r); padding: 2.5rem 1.5rem; gap: 1rem; justify-items: center; }
 .success.is-visible { display: grid; }
@@ -195,7 +195,7 @@
   .selects { grid-template-columns: 1fr 1fr auto; }
   .form-layout { grid-template-columns: 1.4fr 1fr; align-items: start; }
   .cta-final .container { padding-bottom: clamp(56px, 8vw, 100px); padding-right: clamp(220px, 28vw, 380px); }
-  .mascota--panda { height: clamp(240px, 30vw, 360px); }
+  .mascota { height: clamp(260px, 32vw, 400px); }
   .form-aside { position: sticky; top: 1rem; }
 }
 @media (min-width: 1024px) { .cards { grid-template-columns: repeat(3, 1fr); } }
