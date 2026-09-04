@@ -1,0 +1,432 @@
+[
+  {
+    "file": "a-hero-puerto-dia.webp",
+    "propuesta": "A",
+    "uso": "hero desktop",
+    "size": [
+      2688,
+      1520
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "a-exportadora-palta.webp",
+    "propuesta": "A",
+    "uso": "hero móvil / qué es",
+    "size": [
+      1744,
+      2336
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "a-exportadores-grupo.webp",
+    "propuesta": "A",
+    "uso": "sección qué es",
+    "size": [
+      2688,
+      1520
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "a-olas-fondo.webp",
+    "propuesta": "A",
+    "uso": "fondo separador",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "b-hero-puerto-noche.webp",
+    "propuesta": "B",
+    "uso": "hero desktop",
+    "size": [
+      2688,
+      1520
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "b-proa-noche.webp",
+    "propuesta": "B",
+    "uso": "hero móvil",
+    "size": [
+      1744,
+      2336
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "b-olas-fondo-oscuro.webp",
+    "propuesta": "B",
+    "uso": "fondo secciones",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "b-grabando-video.webp",
+    "propuesta": "B",
+    "uso": "cómo participar",
+    "size": [
+      1744,
+      2336
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "c-hero-contenedores.webp",
+    "propuesta": "C",
+    "uso": "hero",
+    "size": [
+      2688,
+      1520
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "c-productos-rojo.webp",
+    "propuesta": "C",
+    "uso": "qué es / productos",
+    "size": [
+      2048,
+      2048
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "c-gruas-rojo.webp",
+    "propuesta": "C",
+    "uso": "etapas / inscripción",
+    "size": [
+      1744,
+      2336
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "c-olas-cintas.webp",
+    "propuesta": "C",
+    "uso": "fondo / cintas",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "thumb-cafe.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "thumb-palta.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "thumb-textil.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "thumb-ceramica.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 (2k medium; miniaturas 1k)"
+  },
+  {
+    "file": "thumb-esparragos.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video (ronda 2, revisión M-04)",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 1k medium"
+  },
+  {
+    "file": "thumb-pescado.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video (ronda 2, revisión M-04)",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 1k medium"
+  },
+  {
+    "file": "thumb-uvas.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video (ronda 2, revisión M-04)",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 1k medium"
+  },
+  {
+    "file": "thumb-pisco.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video (ronda 2, revisión M-04)",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 1k medium"
+  },
+  {
+    "file": "thumb-flores.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video (ronda 2, revisión M-04)",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 1k medium"
+  },
+  {
+    "file": "thumb-bambu.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video (ronda 2, revisión M-04)",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 1k medium"
+  },
+  {
+    "file": "thumb-nueces.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video (ronda 2, revisión M-04)",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 1k medium"
+  },
+  {
+    "file": "thumb-cacao.webp",
+    "propuesta": "todas",
+    "uso": "miniatura video (ronda 2, revisión M-04)",
+    "size": [
+      1344,
+      752
+    ],
+    "model": "gpt_image_2 1k medium"
+  },
+  {
+    "file": "g-hero-exportadores-puerto.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "ronda 3 (pieza visual)",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-grupo-celebrando-blanco.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "ronda 3 (pieza visual)",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-hero-puerto-atardecer.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "ronda 3 (pieza visual)",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-mujer-atardecer-muelle.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "ronda 3 (pieza visual)",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-grupo-fiesta-rojo.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "ronda 3 (pieza visual)",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-olas-aereas.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "ronda 3 (pieza visual)",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-iconos-3d.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "ronda 3 (pieza visual)",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-shanghai-skyline.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "ronda 3 (pieza visual)",
+    "size": [
+      2048,
+      2048
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-gala-final.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "ronda 3 (pieza visual)",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-publico-celulares.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "ronda 3 (pieza visual)",
+    "size": [
+      2688,
+      1152
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-plane-window.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "hero con hueco central para mascotas / premio",
+    "size": [
+      2048,
+      2048
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-hero-familia-dia.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "hero con hueco central para mascotas / premio",
+    "size": [
+      2688,
+      1520
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-hero-familia-shanghai.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "hero con hueco central para mascotas / premio",
+    "size": [
+      2688,
+      1520
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-hero-familia-fiesta.webp",
+    "propuesta": "home PC gráfico",
+    "uso": "hero con hueco central para mascotas / premio",
+    "size": [
+      2688,
+      1520
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-sube-video.webp",
+    "propuesta": "home festivent",
+    "uso": "paso 'súbelo' / 'inscríbete' (sección participar con fotos)",
+    "size": [
+      1168,
+      880
+    ],
+    "model": "gpt_image_2 1k medium"
+  },
+  {
+    "file": "g-inscribete.webp",
+    "propuesta": "home festivent",
+    "uso": "paso 'súbelo' / 'inscríbete' (sección participar con fotos)",
+    "size": [
+      1168,
+      880
+    ],
+    "model": "gpt_image_2 1k medium"
+  },
+  {
+    "file": "g-etapa1-mujer.webp",
+    "propuesta": "home festivent v3",
+    "uso": "etapa 1 (mujer emprendedora grabando)",
+    "size": [
+      1744,
+      2336
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-final-emprendedores.webp",
+    "propuesta": "home festivent v3",
+    "uso": "etapa 2 (gala de emprendedores, no de belleza)",
+    "size": [
+      1744,
+      2336
+    ],
+    "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "g-ciie-expo.webp",
+    "propuesta": "home festivent v3",
+    "uso": "premio CIIE (stand en Shanghái)",
+    "size": [
+      2048,
+      2048
+    ],
+    "model": "gpt_image_2 2k medium"
+  }
+]

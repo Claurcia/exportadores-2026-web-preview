@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Videos y votación · EXPORTADORES 2026</title>
+<meta name="description" content="Mira los videos de los exportadores participantes y vota por tu favorito. Una persona, un voto verificado.">
+<meta name="theme-color" content="#0D3B8E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="icon" href="assets/src/mascota-panda.png">
+</head>
+<body data-page="galeria" data-assets="assets/">
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.53.85l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 8 5.5Z"/></symbol>
+  <symbol id="i-vote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-4 8.5-9 10-5-1.5-9-5-9-10V6l9-3 9 3v6z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0-4 4m4-4 4 4"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9.5 4.5-1 8-4.5 8-9.5V6l-8-3z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-google" viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.4 13.9a6 6 0 0 1 0-3.8V7.5H3.1a10 10 0 0 0 0 9z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5l3.3 2.6C7.2 7.8 9.4 6 12 6z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 15V3m0 0-4 4m4-4 4 4"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M2 12c5-8 9-8 14 0s9 8 14 0 9-8 12 0"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v7h4v-7h3l1-4h-4V8z"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16 3c.3 2.3 1.8 3.8 4 4v3.2a7.5 7.5 0 0 1-4-1.3V15a5.5 5.5 0 1 1-5.5-5.5c.3 0 .7 0 1 .1v3.3a2.3 2.3 0 1 0 1.5 2.1V3H16z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M22 8.2a2.7 2.7 0 0 0-1.9-1.9C18.4 6 12 6 12 6s-6.4 0-8.1.3A2.7 2.7 0 0 0 2 8.2 28 28 0 0 0 1.7 12 28 28 0 0 0 2 15.8a2.7 2.7 0 0 0 1.9 1.9C5.6 18 12 18 12 18s6.4 0 8.1-.3a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22.3 12 28 28 0 0 0 22 8.2zM10 15V9l5.2 3L10 15z"/></symbol>
+</svg>
+
+
+<div class="curtain" aria-hidden="true"><img src="assets/cliente/logo-exportadores-2026.png" alt=""><span class="curtain__bar"></span></div>
+<header class="header">
+  <div class="header__waves" data-wavebg="#DCEFFB,#5FB3E8" data-h="300" data-amp="62"></div>
+  <div class="container header__bar">
+    <a class="header__co" href="#" aria-label="Cosco Shipping"><img src="assets/cliente/logo-cosco-shipping-oficial.png" alt="Cosco Shipping" width="1581" height="1007"></a>
+    <a class="header__brand" href="index.html" aria-label="Exportadores 2026"><img src="assets/cliente/logo-exportadores-2026.png" alt="Exportadores 2026" width="1427" height="981"></a>
+    <a class="header__co header__co--right" href="#" aria-label="Puerto de Chancay"><img src="assets/cliente/logo-puerto-chancay-oficial.png" alt="Puerto de Chancay" width="889" height="333"></a>
+  </div>
+  <nav class="nav container" aria-label="Principal">
+    <a href="index.html" data-nav="index">Inicio</a><a href="index.html#etapas">Etapas</a><a href="galeria.html" data-nav="galeria">Videos y votación</a><a href="index.html#premio">Premio</a><a href="index.html#bases">Bases</a><a class="nav--cta" href="inscripcion.html" data-nav="inscripcion">Sube tu video</a>
+  </nav>
+</header>
+
+<main id="contenido">
+  <section class="page-hero" aria-labelledby="t-gal">
+    <div class="wbg" data-wavebg="#FFFFFF,#DCEFFB" data-h="320" data-amp="46"></div>
+    <div class="container">
+      <span class="sticker reveal" style="--rot:-3deg">Votaciones · 14 set – 18 oct</span>
+      <h1 id="t-gal" class="reveal" data-delay="1">Estos son los exportadores participantes<small>¡Vota por tu favorito!</small></h1>
+      <p class="reveal" data-delay="2">Mira sus videos y apoya al que más te inspire. Una persona, un voto verificado.</p>
+    </div>
+  </section>
+  <div class="wave wave--lg" data-shape="espuma" data-amp="34" data-from="#EAF5FD" data-to="#FFFFFF" data-layers="#DCEFFB,#5FB3E8,#0D3B8E"></div>
+
+  <section class="section" aria-label="Videos participantes" style="padding-top:0">
+    <div class="container">
+      <div class="toolbar reveal">
+        <label class="search"><span class="sr-only">Buscar videos o participantes</span><input type="search" data-search placeholder="Buscar por producto, participante o región…" autocomplete="off"><svg><use href="#i-search"/></svg></label>
+        <div class="chips" data-chips role="group" aria-label="Filtrar por categoría"></div>
+        <div class="selects">
+          <label class="select"><span class="sr-only">Región</span><select data-region></select><svg><use href="#i-chev"/></svg></label>
+          <label class="select"><span class="sr-only">Ordenar</span><select data-sort><option value="votos">Más votados</option><option value="recientes">Más recientes</option><option value="az">A – Z</option></select><svg><use href="#i-chev"/></svg></label>
+        </div>
+      </div>
+      <div class="ranking reveal" data-delay="1" aria-labelledby="t-rank">
+        <div class="ranking__head"><h3 id="t-rank"><span class="live" aria-hidden="true"></span> Top 5 en vivo</h3><span class="muted">Se actualiza con cada voto</span></div>
+        <div class="ranking__list" data-ranking></div>
+      </div>
+      <div class="result-count"><span><strong data-count>0</strong> videos</span><button class="btn btn--ghost btn--sm" type="button" data-reset>Limpiar filtros</button></div>
+      <div class="cards" data-grid></div>
+      <div class="empty" data-empty hidden>
+        <img src="assets/src/mascota-inca.png" alt="" width="507" height="1032">
+        <h3>No encontramos videos con esa búsqueda</h3><p>Prueba con otra palabra o limpia los filtros.</p>
+        <button class="btn btn--outline btn--sm" type="button" data-reset>Ver todos</button>
+      </div>
+      <nav class="pager" data-pager aria-label="Paginación"></nav>
+    </div>
+  </section>
+
+  <div class="wave wave--lg" data-shape="cresta" data-amp="44" data-from="#FFFFFF" data-to="#0D3B8E" data-layers="#DCEFFB,#5FB3E8,#1C4FB0"></div>
+  <section class="cta-final" aria-labelledby="t-cta">
+    <span class="glow" style="left:-6%; top:-10%"></span><span class="glow" style="right:-4%; top:20%"></span>
+    <div class="container">
+      <span class="sticker reveal" style="--rot:-3deg">¿Tienes un producto para exportar?</span>
+      <h2 id="t-cta" class="reveal" data-delay="1">Tu video también puede estar aquí</h2>
+      <p class="reveal" data-delay="2">Inscripciones abiertas hasta el 11 de octubre. Graba, sube a YouTube y llena tu ficha en 5 minutos.</p>
+      <a class="pill pill--white pill--giant reveal" data-delay="3" href="inscripcion.html"><svg><use href="#i-up"/></svg> Sube tu video</a>
+    </div>
+    <img class="mascota mascota--panda" src="assets/src/mascota-panda.png" alt="" loading="lazy">
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wave" data-shape="doble" data-amp="24" data-from="#0D3B8E" data-to="#082A6B" data-layers="#1C4FB0,#8ED0FF"></div>
+  <div class="container">
+    <div class="footer__card">
+      <div>
+        <p class="footer__quote">“El puerto de Chancay es <em>para todos los peruanos</em>”</p>
+        <div class="footer__logos" style="margin-top:1.2rem"><img src="assets/cliente/logo-cosco-shipping-oficial.png" alt="Cosco Shipping"><img src="assets/cliente/logo-puerto-chancay-oficial.png" alt="Puerto de Chancay"></div>
+      </div>
+      <div class="footer__sec">
+        <nav class="footer__nav" aria-label="Menú principal"><a href="index.html">Inicio</a><a href="index.html#etapas">Etapas</a><a href="galeria.html">Videos y votación</a><a href="index.html#premio">Premio</a><a href="index.html#bases">Bases</a><a class="is-cta" href="inscripcion.html">Sube tu video</a></nav>
+        <nav class="footer__links" aria-label="Enlaces secundarios"><a href="#">Privacidad</a><a href="#">Términos</a><a href="mailto:hola@exportadores2026.pe">Contacto</a><a href="#" data-demo-reset title="Solo para la demo">Reiniciar voto (demo)</a></nav>
+      </div>
+    </div>
+    <img class="footer__panda" src="assets/src/mascota-panda.png" alt="" loading="lazy">
+    <div class="footer__bottom"><small>© 2026 EXPORTADORES 2026 · Lima, Perú</small></div>
+  </div>
+</footer>
+
+<dialog id="modal-video" class="modal" aria-labelledby="mv-title">
+  <div class="modal__box">
+    <button class="modal__close" aria-label="Cerrar"><svg><use href="#i-close"/></svg></button>
+    <h3 id="mv-title" data-f="producto">Video</h3><p class="muted" data-f="titular"></p>
+    <div class="modal__video"></div>
+    <button class="btn btn--primary" data-act="vote"><svg><use href="#i-vote"/></svg> Votar por este video</button>
+  </div>
+</dialog>
+
+<dialog id="modal-vote" class="modal" aria-labelledby="vote-title">
+  <div class="modal__box">
+    <button class="modal__close" aria-label="Cerrar"><svg><use href="#i-close"/></svg></button>
+    <div class="vote-steps">
+      <section class="vote-step is-active" data-step="1">
+        <span class="eyebrow"><svg><use href="#i-shield"/></svg> Voto verificado</span>
+        <h3 id="vote-title">Vota por <span data-f="producto"></span></h3>
+        <p class="muted">Para que cada voto cuente una sola vez, confirma quién eres. Toma 10 segundos.</p>
+        <button class="id-btn" data-google><svg><use href="#i-google"/></svg><span>Continuar con Google<small>Un clic, con tu cuenta real</small></span></button>
+        <button class="id-btn" data-mail><svg style="color:#0D3B8E"><use href="#i-mail"/></svg><span>Recibir un código por correo<small>Si no usas Google</small></span></button>
+        <div class="shield"><svg><use href="#i-shield"/></svg><span>Protegemos la votación con reCAPTCHA, límite por IP y una regla única en base de datos: <b>una persona, un voto</b>.</span></div>
+      </section>
+      <section class="vote-step" data-step="2">
+        <h3>Tu correo electrónico</h3><p class="muted">Te enviaremos un código de 6 dígitos para confirmar tu voto por <b data-f="producto"></b>.</p>
+        <div class="field"><label for="vote-email">Correo electrónico</label><input id="vote-email" type="email" data-email inputmode="email" autocomplete="email" placeholder="tu@correo.com"><span class="error">Ingresa un correo válido.</span></div>
+        <div class="hero__actions"><button class="btn btn--ghost" data-back="1">Volver</button><button class="btn btn--azul" data-send-code>Enviar código <svg><use href="#i-arrow"/></svg></button></div>
+      </section>
+      <section class="vote-step" data-step="otp">
+        <h3>Ingresa el código</h3><p class="muted">Lo enviamos a <b data-email-echo></b>. Revisa también tu carpeta de spam.</p>
+        <div class="otp"><input inputmode="numeric" maxlength="1" aria-label="Dígito 1"><input inputmode="numeric" maxlength="1" aria-label="Dígito 2"><input inputmode="numeric" maxlength="1" aria-label="Dígito 3"><input inputmode="numeric" maxlength="1" aria-label="Dígito 4"><input inputmode="numeric" maxlength="1" aria-label="Dígito 5"><input inputmode="numeric" maxlength="1" aria-label="Dígito 6"></div>
+        <div class="hero__actions"><button class="btn btn--ghost" data-back="2">Cambiar correo</button><button class="btn btn--primary" data-verify>Verificar y votar</button></div>
+        <p class="muted" style="font-size:.8rem">Demo: cualquier código de 6 dígitos confirma el voto.</p>
+      </section>
+      <section class="vote-step vote-ok" data-step="3">
+        <div class="vote-ok__icon"><svg><use href="#i-check"/></svg></div>
+        <h3>¡Tu voto fue registrado!</h3>
+        <p class="muted">Votaste por <b data-f="producto"></b> de <span data-f="titular"></span> con <span data-via>tu cuenta</span>. Una persona, un voto: gracias por apoyar a un exportador peruano.</p>
+        <button class="btn btn--primary" data-close>Seguir viendo videos</button>
+        <button class="btn btn--ghost" data-share><svg><use href="#i-share"/></svg> Compartir el concurso</button>
+      </section>
+    </div>
+  </div>
+</dialog>
+
+<template id="tpl-card">
+  <article class="card">
+    <button class="card__media" type="button" data-act="play" aria-label="Reproducir video"><img data-f="thumb" alt=""><span class="card__play"><svg><use href="#i-play"/></svg></span><span class="card__rank" data-f="rank"></span></button>
+    <div class="card__body">
+      <span class="card__cat" data-f="categoria"></span>
+      <h3 class="card__title" data-f="producto"></h3>
+      <div class="card__who"><span class="card__avatar" data-f="initials"></span><span><span data-f="titular"></span> · <span data-f="region"></span></span></div>
+      <div class="card__foot"><span class="card__votes"><svg><use href="#i-vote"/></svg><span data-f="votos"></span> <small>votos</small></span><button class="btn btn--primary btn--sm" type="button" data-act="vote">Votar</button></div>
+    </div>
+  </article>
+</template>
+<template id="tpl-rank">
+  <a class="rank" data-href="#video-{id}" href="#"><span class="rank__badge" data-f="rank"></span><img data-f="thumb" alt=""><b data-f="producto"></b><small><span data-f="votos"></span> votos</small></a>
+</template>
+
+<script src="js/shared/data.js"></script>
+<script src="js/shared/app.js"></script>
+<script src="js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/motion.js"></script>
+</body>
+</html>

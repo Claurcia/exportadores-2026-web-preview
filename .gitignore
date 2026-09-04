@@ -1,0 +1,6 @@
+out/
+.DS_Store
+.vercel
+.env*
+__pycache__/
+node_modules/

@@ -1,0 +1,9 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": false },
+    { "source": "/home/:page", "destination": "/:page", "permanent": false }
+  ],
+  "headers": [ { "source": "/(.*)", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] } ]
+}
