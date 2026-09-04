@@ -4,7 +4,7 @@
 /* Heros de página en azul oscuro (pedido de Carlos: no bajar todo en blanco y celeste) */
 .page-hero { position: relative; background: var(--azul2); color: #fff; overflow: hidden; }
 .page-hero .wbg { position: absolute; inset: 0; pointer-events: none; }
-.page-hero .container { position: relative; display: grid; gap: 1rem; justify-items: center; text-align: center; padding: clamp(1.6rem, 4vw, 3rem) 0 clamp(1.4rem, 3vw, 2.4rem); }
+.page-hero .container { position: relative; display: grid; gap: .9rem; justify-items: center; text-align: center; padding: clamp(1.4rem, 3.2vw, 2.4rem) 0 clamp(1.2rem, 2.6vw, 2rem); }
 .page-hero h1 { color: #fff; font-size: clamp(2rem, 6vw, 4.4rem); font-weight: 900; }
 .page-hero h1 small { display: block; color: var(--cel); font-size: .6em; margin-top: .2rem; }
 .page-hero p { color: rgba(255,255,255,.88); max-width: 52ch; font-size: clamp(1rem, 2vw, 1.15rem); }
