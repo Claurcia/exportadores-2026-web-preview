@@ -79,7 +79,6 @@ p { margin: 0; }
 .wave--bottom { bottom: -1px; --wh: var(--wb); }
 .hero__tag { position: absolute; left: 50%; bottom: calc(var(--wb) + 10px); z-index: 3; transform: translateX(-50%) rotate(-2deg); background: var(--rojo); color: #fff; font: 800 clamp(.82rem, 1.7vw, 1.1rem)/1 var(--display); letter-spacing: .08em; text-transform: uppercase; padding: .8rem 1.2rem; border-radius: 10px; white-space: nowrap; box-shadow: 0 10px 26px rgba(0,0,0,.35); }
 .hero__tag.reveal { transform: translateX(-50%) rotate(-2deg) translateY(20px); } .hero__tag.reveal.in { transform: translateX(-50%) rotate(-2deg); }
-
 /* ---------- Ondas ---------- */
 .wave { position: relative; height: var(--wh, clamp(56px, 9vw, 120px)); overflow: hidden; line-height: 0; }
 .wave svg { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -148,12 +147,15 @@ p { margin: 0; }
 .etapa__photo { position: relative; aspect-ratio: 16 / 10; background: var(--cel2); }
 .etapa__photo img { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 20%); }
 .etapa__photo::after { content: ""; position: absolute; inset: auto 0 0 0; height: 45%; background: linear-gradient(180deg, rgba(8,42,107,0), rgba(8,42,107,.45)); pointer-events: none; }
-.etapa__label { position: absolute; left: 1.2rem; top: 1.2rem; z-index: 1; background: #fff; color: var(--azul); font: 800 .78rem/1 var(--display); letter-spacing: .06em; text-transform: uppercase; padding: .65rem .95rem; border-radius: 999px; box-shadow: 0 8px 20px rgba(0,0,0,.18); }
-.etapa--2 .etapa__label { background: var(--rojo); color: #fff; }
-.etapa__num { position: absolute; right: 1.4rem; bottom: -1.7rem; z-index: 2; width: 88px; height: 88px; border-radius: 50%; background: var(--rojo); color: #fff; display: grid; place-items: center; font: 900 2.7rem/1 var(--display); border: 6px solid var(--azul); }
+.etapa__photo { grid-row: 1; grid-column: 1; }
+.etapa__num { grid-row: 1; grid-column: 1; justify-self: end; align-self: end; margin-right: 1.4rem; transform: translateY(50%); z-index: 2; width: 88px; height: 88px; border-radius: 50%; background: var(--rojo); color: #fff; display: grid; place-items: center; font: 900 2.7rem/1 var(--display); border: 6px solid var(--azul); }
 .etapa--2 .etapa__num { background: var(--cel); color: var(--azul2); border-color: var(--azul3); }
 .etapa__body { position: relative; display: grid; gap: 1rem; justify-items: start; padding: 1.6rem clamp(1.2rem, 2.6vw, 2rem) clamp(1.4rem, 2.6vw, 2rem); }
-.etapa__body h3 { color: #fff; font-size: clamp(1.35rem, 2.4vw, 1.9rem); font-weight: 900; max-width: 18ch; padding-right: 5rem; }
+/* Jerarquía (5 set): la etapa es lo principal; el titular descriptivo va debajo, más chico */
+.etapa__title { display: grid; gap: .05em; color: #fff; padding-right: 5rem; }
+.etapa__n { font: 900 clamp(2rem, 3.2vw, 2.8rem)/1 var(--display); color: var(--cel); letter-spacing: -.01em; }
+.etapa__name { font: 900 clamp(1.35rem, 2.2vw, 1.8rem)/1.1 var(--display); }
+.etapa__sub { margin: -.35rem 0 0; color: rgba(255,255,255,.82); font-size: clamp(.98rem, 1.5vw, 1.1rem); font-weight: 700; line-height: 1.3; max-width: 32ch; }
 .etapa__meta { display: flex; flex-wrap: wrap; gap: .5rem; }
 .tagc { display: inline-flex; align-items: center; gap: .45rem; background: #fff; color: var(--azul); border-radius: 999px; padding: .55rem .9rem; font: 800 .86rem/1 var(--display); }
 .tagc svg { width: 16px; height: 16px; flex: none; }
@@ -306,6 +308,58 @@ p { margin: 0; }
 .reveal[data-delay="1"] { transition-delay: .08s; } .reveal[data-delay="2"] { transition-delay: .16s; } .reveal[data-delay="3"] { transition-delay: .24s; } .reveal[data-delay="4"] { transition-delay: .32s; }
 @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
 .is-shake { animation: shake .4s var(--ease); }
+
+/* ============ Móvil (< 700) ============ */
+/* móvil: la foto es 2:3 y los pies de la familia quedan pegados a la onda; el cartel baja y se apoya sobre ella para no tapar a nadie (14% ≈ altura de los pies) */
+@media (max-width: 699px) { .hero__tag { bottom: max(8px, calc(14% - 44px)); } }
+/* móvil: el bloque del titular baja para despejar las puntas de las torres de Shanghái y se achica un 20% (misma proporción entre líneas) */
+@media (max-width: 699px) {
+  .hero__copy { top: 112px; gap: .6rem; }
+  .hero__copy .l0 { font-size: 5.9cqw; } .hero__copy .l1 { font-size: 9.9cqw; } .hero__copy .l2 { font-size: 7.3cqw; }
+  @supports not (container-type: inline-size) {
+    .hero__copy .l0 { font-size: 5.3vw; } .hero__copy .l1 { font-size: 8.8vw; } .hero__copy .l2 { font-size: 6.6vw; }
+  }
+}
+
+/* móvil: la bienvenida es un solo bloque azul (foto del mar + pasos + botón). La foto se funde por abajo en --azul2,
+   los pasos se achican ~12% para leerse como parte del bloque y la onda hacia las etapas va azul→azul sin franja celeste */
+@media (max-width: 699px) {
+  .bienvenida { background: var(--azul2); padding-bottom: 44px; }
+  .bienvenida__photo::after { background: linear-gradient(180deg, rgba(8,42,107,0) 48%, var(--azul2) 100%), linear-gradient(90deg, rgba(8,42,107,.82) 0%, rgba(8,42,107,.55) 45%, rgba(8,42,107,.08) 100%); }
+  .steps { width: 88%; margin-inline: auto; gap: 1rem; }
+  .step { border-color: transparent; }
+  .step__photo { aspect-ratio: 16 / 11; }
+  .step__photo .sticker--num { left: .8rem; top: .8rem; }
+  .step__head { padding: .75rem 1rem; font-size: .98rem; }
+  .step__desc { padding: .7rem 1rem .95rem; font-size: .9rem; }
+  .bienvenida .foot { margin-top: 1.4rem; }
+  .wave--bienv { background: var(--azul2) !important; }
+  .wave--bienv svg > g:nth-child(1) g { fill: var(--azul3); }
+  .wave--bienv svg > g:nth-child(2) g { fill: var(--cel); }
+  .wave--bienv svg > g:nth-child(3) g { fill: var(--azul); }
+}
+
+/* móvil: las etapas dejan de ser tarjetas (se parecían a los pasos) y se leen como una ruta: línea punteada tipo travesía,
+   número grande sobre la línea, título de etapa con doble peso, foto circular (ojo de buey) y burbuja celeste */
+@media (max-width: 699px) {
+  .etapas { padding-top: 48px; padding-bottom: 56px; }
+  .etapas .title-row { margin-bottom: 1.8rem; }
+  .etapas__grid { gap: 0; }
+  .etapa, .etapa--2 { position: relative; background: none; box-shadow: none; border-radius: 0; overflow: visible; grid-template-columns: 56px 1fr; column-gap: .9rem; row-gap: .85rem; align-items: start; padding-bottom: 2.6rem; }
+  .etapa--1::before { content: ""; position: absolute; left: 26px; top: 56px; bottom: 0; border-left: 3px dashed rgba(95,179,232,.55); }
+  .etapa__body { display: contents; }
+  .etapa > *, .etapa__body > * { grid-column: 2; }
+  .etapa__num { grid-row: 1; grid-column: 1; justify-self: start; align-self: start; margin: 0; transform: none; width: 56px; height: 56px; font-size: 1.7rem; border: 4px solid rgba(255,255,255,.18); }
+  .etapa__photo { grid-row: auto; order: 4; width: min(100%, 250px); aspect-ratio: 1; border-radius: 50%; border: 5px solid var(--cel); justify-self: center; overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,.35); margin-block: .3rem; }
+  .etapa__photo::after { display: none; }
+  .etapa__title { order: 1; grid-row: 1; align-self: center; padding-right: 0; }
+  .etapa__n { font-size: 2.2rem; } .etapa__name { font-size: 1.45rem; }
+  .etapa__sub { order: 2; margin-top: -.3rem; }
+  .etapa__meta { order: 3; }
+  .etapa__body p:not(.etapa__sub) { order: 5; }
+  .etapa__hi { order: 6; }
+  .etapa .pill { order: 7; }
+}
 
 /* ============ Tablet ============ */
 @media (min-width: 700px) {

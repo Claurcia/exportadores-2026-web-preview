@@ -59,7 +59,7 @@
   </section>
   <div class="wave wave--lg" data-shape="espuma" data-amp="34" data-from="#082A6B" data-to="#FFFFFF" data-layers="#1C4FB0,#5FB3E8,#DCEFFB"></div>
 
-  <section class="section" aria-label="Videos participantes" style="padding-top:0">
+  <section class="section" aria-label="Buscar y Top 5" style="padding-top:0">
     <div class="container">
       <div class="toolbar reveal">
         <label class="search"><span class="sr-only">Buscar videos o participantes</span><input type="search" data-search placeholder="Buscar por producto, participante o región…" autocomplete="off"><svg><use href="#i-search"/></svg></label>
@@ -69,18 +69,29 @@
           <label class="select"><span class="sr-only">Ordenar</span><select data-sort><option value="votos">Más votados</option><option value="recientes">Más recientes</option><option value="az">A – Z</option></select><svg><use href="#i-chev"/></svg></label>
         </div>
       </div>
+      <!-- Top 5: tabla de posiciones en filas sobre blanco (5 set): número grande, miniatura, barra de votos. Formato distinto al carrusel de la galería -->
       <div class="ranking reveal" data-delay="1" aria-labelledby="t-rank">
         <div class="ranking__head"><h3 id="t-rank"><span class="live" aria-hidden="true"></span> Top 5 en vivo</h3><span class="muted">Se actualiza con cada voto</span></div>
-        <div class="ranking__list" data-ranking></div>
+        <ol class="ranking__list" data-ranking></ol>
       </div>
-      <div class="result-count"><span><strong data-count>0</strong> videos</span><button class="btn btn--ghost btn--sm" type="button" data-reset>Limpiar filtros</button></div>
-      <div class="cards" data-grid></div>
-      <div class="empty" data-empty hidden>
-        <img src="assets/src/mascota-inca.png" alt="" width="507" height="1032">
-        <h3>No encontramos videos con esa búsqueda</h3><p>Prueba con otra palabra o limpia los filtros.</p>
-        <button class="btn btn--outline btn--sm" type="button" data-reset>Ver todos</button>
+    </div>
+  </section>
+
+  <!-- Todos los videos: caja azul oscuro con olas y scroll horizontal (el formato que tenía el Top 5), fichas de colores intercalados rojo / celeste / blanco -->
+  <section class="section videos" aria-label="Videos participantes">
+    <div class="container">
+      <div class="videos__box">
+        <div class="videos__bg" data-wavebg="#1C4FB0,#5FB3E8" data-h="420" data-amp="56" data-wavebg-bottom="#0D3B8E,#1C4FB0" data-bottom=".6"></div>
+        <div class="videos__in">
+          <div class="result-count"><span><strong data-count>0</strong> videos <small class="swipe">Desliza para ver todos</small></span><button class="btn btn--ghost btn--sm" type="button" data-reset>Limpiar filtros</button></div>
+          <div class="cards" data-grid></div>
+          <div class="empty" data-empty hidden>
+            <img src="assets/src/mascota-inca.png" alt="" width="507" height="1032">
+            <h3>No encontramos videos con esa búsqueda</h3><p>Prueba con otra palabra o limpia los filtros.</p>
+            <button class="btn btn--outline btn--sm" type="button" data-reset>Ver todos</button>
+          </div>
+        </div>
       </div>
-      <nav class="pager" data-pager aria-label="Paginación"></nav>
     </div>
   </section>
 
@@ -170,7 +181,7 @@
   </article>
 </template>
 <template id="tpl-rank">
-  <a class="rank" data-href="#video-{id}" href="#"><span class="rank__badge" data-f="rank"></span><img data-f="thumb" alt=""><b data-f="producto"></b><small><span data-f="votos"></span> votos</small></a>
+  <li class="rank"><a data-href="#video-{id}" href="#"><span class="rank__pos" data-f="rank"></span><span class="rank__thumb"><img data-f="thumb" alt=""></span><span class="rank__info"><b data-f="producto"></b><small><span data-f="titular"></span> · <span data-f="region"></span></small><span class="rank__bar" aria-hidden="true"><i></i></span></span><span class="rank__votes"><span data-f="votos"></span><small>votos</small></span></a></li>
 </template>
 
 <script src="js/shared/data.js"></script>

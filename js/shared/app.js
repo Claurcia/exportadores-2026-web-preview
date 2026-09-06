@@ -13,7 +13,7 @@
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const fmt = (n) => new Intl.NumberFormat('es-PE').format(n);
   const state = {
-    q: '', cat: 'Todas', region: 'Todas', sort: 'votos', page: 1, perPage: 9,
+    q: '', cat: 'Todas', region: 'Todas', sort: 'votos', page: 1, perPage: 8, shown: 0,
     votedId: Number(localStorage.getItem('expo_voted') || 0) || null,
     current: null,
     data: D.participantes.map(p => ({ ...p }))
@@ -163,38 +163,32 @@
     else if (state.sort === 'az') list.sort((a, b) => a.producto.localeCompare(b.producto, 'es'));
     return list;
   }
-  function renderGallery() {
+  function renderGallery(append = false) {
+    // Carrusel horizontal con scroll infinito: pinta un lote y agrega el siguiente al acercarse al final (sin paginado)
     const grid = $('[data-grid]'); if (!grid) return;
     const list = filtered();
-    const pages = Math.max(1, Math.ceil(list.length / state.perPage));
-    state.page = Math.min(state.page, pages);
-    const slice = list.slice((state.page - 1) * state.perPage, state.page * state.perPage);
+    if (!append) { grid.innerHTML = ''; state.shown = 0; grid.scrollLeft = 0; }
+    const slice = list.slice(state.shown, state.shown + state.perPage);
     const ranked = state.sort === 'votos' && state.cat === 'Todas' && state.region === 'Todas' && !state.q;
-    grid.innerHTML = '';
     const tpl = $('#tpl-card');
     slice.forEach((p, i) => {
       const node = tpl.content.firstElementChild.cloneNode(true);
-      fill(node, p, ranked ? (state.page - 1) * state.perPage + i + 1 : null);
+      fill(node, p, ranked ? state.shown + i + 1 : null);
       node.classList.add('reveal'); node.dataset.delay = String((i % 3) + 1);
       grid.appendChild(node);
     });
+    state.shown += slice.length;
+    grid.dataset.more = state.shown < list.length ? '1' : '';
     const empty = $('[data-empty]'); if (empty) empty.hidden = list.length > 0;
     const count = $('[data-count]'); if (count) count.textContent = list.length;
-    const pager = $('[data-pager]');
-    if (pager) {
-      pager.innerHTML = '';
-      const mk = (label, page, dis, act) => { const b = document.createElement('button'); b.type = 'button'; b.innerHTML = label; b.disabled = dis; if (act) b.classList.add('is-active'); b.setAttribute('aria-label', typeof label === 'string' && label.length < 3 ? `Página ${label}` : ''); b.addEventListener('click', () => { state.page = page; renderGallery(); grid.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); return b; };
-      pager.appendChild(mk('&lsaquo;', state.page - 1, state.page === 1));
-      for (let i = 1; i <= pages; i++) pager.appendChild(mk(String(i), i, false, i === state.page));
-      pager.appendChild(mk('&rsaquo;', state.page + 1, state.page === pages));
-      pager.hidden = pages <= 1;
-    }
     requestAnimationFrame(() => initReveal());
   }
   function renderRanking() {
     const c = $('[data-ranking]'); if (!c) return;
     const top = [...state.data].sort((a, b) => b.votos - a.votos).slice(0, 5);
     renderList(c, '#tpl-rank', top, true, false);
+    const max = top[0]?.votos || 1; // barra de votos relativa al primer puesto
+    [...c.children].forEach((el, i) => el.style.setProperty('--p', (top[i].votos / max).toFixed(3)));
   }
   function initGallery() {
     if (!$('[data-grid]')) return;
@@ -216,6 +210,8 @@
     const demoReset = $('[data-demo-reset]');
     if (demoReset && !/demo/.test(location.search + location.hash)) demoReset.closest('a, button').hidden = true; // visible solo con ?demo=1
     if (demoReset) demoReset.addEventListener('click', (e) => { e.preventDefault(); localStorage.removeItem('expo_voted'); state.votedId = null; renderRanking(); renderGallery(); toast('Modo demo: voto reiniciado.'); });
+    const grid = $('[data-grid]');
+    grid.addEventListener('scroll', () => { if (grid.dataset.more && grid.scrollLeft + grid.clientWidth > grid.scrollWidth - 320) renderGallery(true); }, { passive: true });
     renderRanking(); renderGallery();
     // deep link #video-ID → abrir
     const m = location.hash.match(/#video-(\d+)/);
@@ -318,7 +314,6 @@
       celular: v => /^9\d{8}$/.test(v.replace(/\s/g, '')) || 'Ingresa un celular válido de 9 dígitos.',
       correo: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || 'Ingresa un correo válido.',
       region: v => !!v || 'Selecciona tu región.',
-      empresa: v => v.trim().length >= 2 || 'Escribe el nombre de tu empresa o marca.',
       producto: v => v.trim().length >= 3 || 'Escribe el nombre de tu producto.',
       categoria: v => !!v || 'Selecciona una categoría.',
       descripcion: v => v.trim().length >= 40 || `Cuéntanos un poco más (mínimo 40 caracteres, llevas ${v.trim().length}).`,
