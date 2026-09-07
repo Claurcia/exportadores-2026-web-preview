@@ -38,6 +38,10 @@ python3 tools/render.py index           # una sola
 python3 tools/motion_test.py            # animaciones: clases, marquee, carrusel, errores JS
 ```
 
+**Caché**: `tools/version.py` estampa `?v=AAAAMMDD-HHMM` en todos los css/js/imágenes que enlazan las páginas (y en
+`<meta name="version">`); lo corre solo el hook pre-commit (instalar una vez por clon con `sh tools/install-hook.sh`).
+Al compartir un link tras publicar, agregar la misma versión: `…/?v=AAAAMMDD-HHMM`, y el cliente nunca ve caché.
+
 `?static=1` en la URL apaga las animaciones (lo usa `render.py`). Probar siempre en 390, 1440 y ≥1800 px.
 
 **Publicar**: conectar el repo a Vercel (o cualquier hosting estático) con la raíz del repo como salida.
