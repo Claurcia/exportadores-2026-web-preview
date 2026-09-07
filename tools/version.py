@@ -1,4 +1,4 @@
-"""Estampa una versión (?v=AAAAMMDD-HHMM) en todos los archivos locales que enlazan las páginas HTML
+"""Estampa una versión (?v=AAAAMMDD-HHMMSS) en todos los archivos locales que enlazan las páginas HTML
 (css, js e imágenes en href/src/srcset) y en <meta name="version">. Así cada publicación cambia las URLs
 y el cliente nunca ve una versión cacheada. Lo ejecuta el hook pre-commit (tools/install-hook.sh);
 también se puede correr a mano: python tools/version.py [version]"""
@@ -6,7 +6,7 @@ import re, sys, pathlib, datetime
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ["index.html", "galeria.html", "inscripcion.html"]
-VERSION = sys.argv[1] if len(sys.argv) > 1 else datetime.datetime.now().strftime("%Y%m%d-%H%M")
+VERSION = sys.argv[1] if len(sys.argv) > 1 else datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 LOCAL = re.compile(r'((?:href|src)=")((?:css|js|assets)/[^"?#]+)(?:\?v=[^"#]*)?("|#)')
 SRCSET = re.compile(r'(srcset=")([^"]+)(")')
 
