@@ -428,5 +428,11 @@
       2048
     ],
     "model": "gpt_image_2 2k medium"
+  },
+  {
+    "file": "collage/p-01.webp … p-40.webp (+ collage-participantes.webp)",
+    "model": "ChatGPT (imagen generada por el equipo, 7 set 2026)",
+    "prompt": "Collage 10×4 de exportadores peruanos ilustrados con sus productos; cortado en 40 fichas cuadradas de 240 px para el mosaico del home",
+    "note": "Sin texto dentro de las imágenes. Ilustraciones genéricas: no representan a participantes reales."
   }
 ]

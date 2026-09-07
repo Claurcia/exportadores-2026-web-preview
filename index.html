@@ -25,6 +25,7 @@
   <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v7h4v-7h3l1-4h-4V8z"/></symbol>
   <symbol id="i-tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16 3c.3 2.3 1.8 3.8 4 4v3.2a7.5 7.5 0 0 1-4-1.3V15a5.5 5.5 0 1 1-5.5-5.5c.3 0 .7 0 1 .1v3.3a2.3 2.3 0 1 0 1.5 2.1V3H16z"/></symbol>
   <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M22 8.2a2.7 2.7 0 0 0-1.9-1.9C18.4 6 12 6 12 6s-6.4 0-8.1.3A2.7 2.7 0 0 0 2 8.2 28 28 0 0 0 1.7 12 28 28 0 0 0 2 15.8a2.7 2.7 0 0 0 1.9 1.9C5.6 18 12 18 12 18s6.4 0 8.1-.3a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22.3 12 28 28 0 0 0 22 8.2zM10 15V9l5.2 3L10 15z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
   <symbol id="i-wave" viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M2 12c5-8 9-8 14 0s9 8 14 0 9-8 12 0"/></symbol>
 </svg>
 
@@ -128,24 +129,61 @@
 
   <div class="wave wave--lg" data-shape="cresta" data-amp="44" data-from="#082A6B" data-to="#EAF5FD" data-layers="#1C4FB0,#5FB3E8,#DCEFFB"></div>
 
-  <!-- Participantes: vista previa de videos -->
+  <!-- Participantes: mosaico con todos los exportadores (sin ranking ni votos, para no destacar solo a algunos) + entrada a la galería -->
   <section class="participantes" id="participantes" aria-labelledby="t-part">
+    <div class="participantes__bg" data-wavebg="#DCEFFB,#5FB3E8" data-h="600" data-amp="60"></div>
     <div class="container">
-      <h2 id="t-part" class="reveal">Estos son los exportadores participantes<small>¡Vota por tu favorito!</small></h2>
-      <div class="carousel reveal" data-delay="1"><div class="carousel__track" data-carousel>
-        <a class="pv" href="galeria.html#video-5"><div class="pv__thumb"><img src="assets/gen/thumb-esparragos-800.webp" alt="" loading="lazy"><span class="sticker sticker--white" style="--rot:-3deg">#1</span></div><div class="pv__body"><b>Espárragos del Sol</b><span>José Luis Ramírez · Ica</span><div class="pv__foot"><em>1,320 votos</em><i>Votar</i></div></div></a>
-        <a class="pv" href="galeria.html#video-9"><div class="pv__thumb"><img src="assets/gen/thumb-pescado-800.webp" alt="" loading="lazy"><span class="sticker sticker--white" style="--rot:3deg">#2</span></div><div class="pv__body"><b>Pescados del Pacífico</b><span>Manuel Arévalo · Piura</span><div class="pv__foot"><em>1,280 votos</em><i>Votar</i></div></div></a>
-        <a class="pv" href="galeria.html#video-1"><div class="pv__thumb"><img src="assets/gen/thumb-cafe-800.webp" alt="" loading="lazy"><span class="sticker sticker--white" style="--rot:-2deg">#3</span></div><div class="pv__body"><b>Café Especial del Norte</b><span>María Fernanda Ruiz · Cajamarca</span><div class="pv__foot"><em>1,245 votos</em><i>Votar</i></div></div></a>
-        <a class="pv" href="galeria.html#video-2"><div class="pv__thumb"><img src="assets/gen/thumb-palta-800.webp" alt="" loading="lazy"><span class="sticker sticker--white" style="--rot:3deg">#4</span></div><div class="pv__body"><b>Palta Hass Premium</b><span>Carlos Mendoza · La Libertad</span><div class="pv__foot"><em>1,180 votos</em><i>Votar</i></div></div></a>
-        <a class="pv" href="galeria.html#video-8"><div class="pv__thumb"><img src="assets/gen/thumb-uvas-800.webp" alt="" loading="lazy"><span class="sticker sticker--white" style="--rot:-3deg">#5</span></div><div class="pv__body"><b>Uvas de Exportación</b><span>Sofía Quispe · Ica</span><div class="pv__foot"><em>1,100 votos</em><i>Votar</i></div></div></a>
-        <a class="pv" href="galeria.html#video-6"><div class="pv__thumb"><img src="assets/gen/thumb-nueces-800.webp" alt="" loading="lazy"><span class="sticker sticker--white" style="--rot:2deg">#6</span></div><div class="pv__body"><b>Nueces Andinas</b><span>Andrea Torres · Junín</span><div class="pv__foot"><em>1,050 votos</em><i>Votar</i></div></div></a>
-      </div>
-      <div class="carousel__nav"><button type="button" data-prev aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><div class="dots"></div><button type="button" data-next aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
+      <h2 id="t-part" class="reveal"><span class="l1">Galería de</span><span class="l2">exportadores</span><span class="l3">Participantes</span></h2>
+      <div class="mosaico reveal" data-delay="1" role="img" aria-label="Mosaico con los exportadores participantes del concurso">
+        <div class="mosaico__grid">
+          <img src="assets/gen/collage/p-01.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-02.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-03.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-04.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-05.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-06.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-07.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-08.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-09.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-10.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-11.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-12.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-13.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-14.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-15.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-16.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-17.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-18.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-19.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-20.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-21.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-22.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-23.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-24.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-25.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-26.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-27.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-28.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-29.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-30.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-31.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-32.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-33.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-34.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-35.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-36.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-37.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-38.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-39.webp" alt="" width="240" height="240" loading="lazy">
+          <img src="assets/gen/collage/p-40.webp" alt="" width="240" height="240" loading="lazy">
+        </div>
       </div>
       <div class="cta reveal" data-delay="2">
-        <a class="pill pill--giant" href="galeria.html"><svg><use href="#i-play"/></svg> Ver todos los videos</a>
-        <p class="muted">Buscador por producto, región y categoría · ranking en vivo · una persona, un voto verificado</p>
+        <a class="pill pill--solid pill--giant" href="galeria.html">Ingresa aquí y vota por tu favorito <svg><use href="#i-arrow"/></svg></a>
       </div>
+      <p class="note reveal" data-delay="3">Todos los videos en una sola galería · una persona, un voto verificado</p>
+      <img class="participantes__mascota participantes__mascota--inca" src="assets/src/mascota-inca.png" alt="" loading="lazy">
+      <img class="participantes__mascota participantes__mascota--panda" src="assets/src/mascota-panda.png" alt="" loading="lazy">
     </div>
   </section>
 
