@@ -186,7 +186,7 @@ p { margin: 0; }
 .participantes { position: relative; overflow: hidden; background: var(--cel3); padding: clamp(56px, 8vw, 110px) 0 0; }
 .participantes__bg { position: absolute; inset: 0; pointer-events: none; }
 .participantes__bg svg { width: 100%; height: 100%; }
-.participantes .container { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "title title title" "mosaico mosaico mosaico" "cta cta cta" "inca note panda"; column-gap: .5rem; row-gap: clamp(1.2rem, 2.5vw, 2rem); align-items: end; }
+.participantes .container { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "title title title" "mosaico mosaico mosaico" "cta cta cta" "inca . panda"; column-gap: .5rem; row-gap: clamp(1.2rem, 2.5vw, 2rem); align-items: end; }
 .participantes h2 { grid-area: title; display: grid; justify-items: center; gap: .15rem; text-align: center; margin: 0; }
 .participantes h2 .l1 { font-size: clamp(1.4rem, 3.4vw, 2.5rem); font-weight: 900; line-height: 1; color: var(--azul); }
 .participantes h2 .l2 { font-size: clamp(2.2rem, 6vw, 4.6rem); font-weight: 900; line-height: 1; color: #fff; background: var(--azul2); padding: .1em .32em .16em; border-radius: .16em; letter-spacing: .01em; }
@@ -197,7 +197,6 @@ p { margin: 0; }
 .mosaico__grid img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; background: var(--cel2); }
 .participantes .cta { grid-area: cta; display: grid; justify-items: center; margin: 0; }
 .participantes .cta .pill--giant { width: min(860px, 100%); font-size: clamp(1rem, 2vw, 1.45rem); text-align: center; }
-.participantes .note { grid-area: note; align-self: center; margin: 0; text-align: center; color: var(--gris); font-size: .92rem; line-height: 1.35; padding-bottom: .8rem; }
 .participantes__mascota { width: auto; height: clamp(120px, 34vw, 240px); align-self: end; filter: drop-shadow(0 12px 20px rgba(0,0,0,.22)); }
 .participantes__mascota--inca { grid-area: inca; justify-self: start; }
 .participantes__mascota--panda { grid-area: panda; justify-self: end; }
@@ -389,9 +388,9 @@ p { margin: 0; }
 }
 /* ============ Desktop ============ */
 @media (min-width: 1024px) {
-  .participantes .container { grid-template-columns: minmax(170px, 260px) minmax(0, 1fr) minmax(170px, 260px); grid-template-areas: "inca title panda" "inca mosaico panda" "inca cta panda" "inca note panda"; column-gap: 2rem; }
+  .participantes .container { grid-template-columns: minmax(170px, 260px) minmax(0, 1fr) minmax(170px, 260px); grid-template-areas: "inca title panda" "inca mosaico panda" "inca cta panda"; column-gap: 2rem; }
   .participantes__mascota { height: clamp(300px, 30vw, 440px); }
-  .participantes .note { padding-bottom: 1.6rem; }
+  .participantes .cta { padding-bottom: 1.6rem; }
   .header__co img { height: 92px; } .header__co--right img { height: 84px; } .header__brand img { height: 170px; }
   .nav a { font-size: .9rem; padding: .8rem 1.2rem; }
   .hero__photo img { aspect-ratio: 16 / 10.5; }
