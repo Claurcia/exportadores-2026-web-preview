@@ -58,7 +58,7 @@ caracteres sin codificar: el navegador descarta la fuente en silencio.
 3. Frase de piso del hero: «**Tú también puedes exportar**»; «de Chancay a Shanghái» debajo, menor.
 4. Fechas de inscripción en bloque rojo con letras blancas a los pies de la familia, no junto al titular.
 5. El titular nunca tapa las caras.
-6. **Un solo premio**: el viaje a China para los tres primeros puestos (CIIE 2026 + APEC 2026).
+6. **Un solo premio**: el viaje a China con todo pagado para los 5 ganadores (CIIE Shanghái 2026). Doc de Carlos del 7 set 2026.
 7. Nada que parezca página del Puerto de Chancay: es auspiciador.
 8. Orden del home: hero → bienvenida (barco + texto corto + 4 pasos) → las 2 etapas (fondo azul oscuro,
    letras claras, burbuja celeste) → participantes → bases → premio → síguelo → footer.

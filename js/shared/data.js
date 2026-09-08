@@ -36,8 +36,8 @@ window.EXPO = {
     { t: 'Inscripción', d: 'Completa la ficha de inscripción y adjunta el enlace de tu video en YouTube presentando tu producto (máximo 2 minutos). La inscripción es gratuita y está abierta del 14 de setiembre al 11 de octubre de 2026.' },
     { t: 'Moderación', d: 'Todos los videos inscritos son evaluados para verificar que su contenido no tenga ningún elemento ofensivo ni viole principios de buena conducta. Una vez aprobados, se publican en la galería en un plazo máximo de 48 horas.' },
     { t: 'Etapa 1: Competencia online', d: 'Del 14 de setiembre al 18 de octubre. Todos los productos aprobados participan a través de sus videos. El público vota con identidad verificada: una persona, un voto. Clasifican 10 finalistas: los 5 más votados y 5 seleccionados por el jurado.' },
-    { t: 'Etapa 2: Gran Final en Lima', d: '23 de octubre en el Hotel Los Delfines. Los 10 finalistas presentan en vivo frente a un jurado que elige a los 3 ganadores.' },
-    { t: 'Premios', d: 'Los 3 primeros lugares ganan el premio de exportar sus productos en la CIIE 2026 (Shanghái) y participar en el APEC 2026 en China.' },
+    { t: 'Etapa 2: Gran Final en Lima', d: '23 de octubre en el Hotel Los Delfines. Los 10 finalistas presentan en vivo frente a un jurado que elige a los 5 ganadores.' },
+    { t: 'Premios', d: 'Los 5 ganadores viajan a China con todo pagado para exponer sus productos en la CIIE 2026 (Shanghái) y participar en el APEC 2026 en China.' },
     { t: 'Datos personales', d: 'Los datos se tratan conforme a la Ley N.º 29733 de Protección de Datos Personales, únicamente para la gestión del concurso. El participante puede ejercer sus derechos ARCO escribiendo al correo de contacto.' },
     { t: 'Disposiciones finales', d: 'La organización se reserva el derecho de modificar fechas o etapas por causas de fuerza mayor. Su decisión es inapelable.' }
   ]
