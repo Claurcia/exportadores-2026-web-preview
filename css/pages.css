@@ -51,14 +51,15 @@
 
 /* Todos los videos (8 set): lista vertical de fichas, una debajo de otra, sobre olas suaves. Sin ranking: nadie recibe más
    presencia por sus votos. Colores intercalados rojo / celeste / blanco (pedido de Carlos) */
-.videos { position: relative; overflow: hidden; background: #fff; padding-top: 0; }
+.videos { position: relative; overflow: hidden; background: #fff; }
 .videos .wbg { position: absolute; inset: 0; pointer-events: none; }
 .videos .container { position: relative; }
-.videos__head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.videos__head { display: grid; gap: .6rem; margin-bottom: 1.1rem; }
+.videos__nota { margin: 0; color: var(--gris); font-size: .98rem; line-height: 1.4; max-width: 44ch; }
+.videos__nota b { color: var(--azul); }
 .videos__head h2 { font-size: clamp(1.45rem, 4vw, 2.2rem); }
 .videos__head h2 small { display: block; font-size: .95rem; font-weight: 700; color: var(--gris); margin-top: .1rem; }
 .videos__head h2 strong { color: var(--azul); }
-.videos__head .btn { white-space: nowrap; flex: none; }
 .cards { display: grid; gap: .75rem; }
 .card { position: relative; display: grid; grid-template-columns: minmax(118px, 36%) minmax(0, 1fr); gap: .75rem; background: #fff; border: 1.5px solid var(--azul); border-radius: 16px; padding: .5rem; transition: transform .25s var(--ease); }
 .card:hover { transform: translateY(-3px); }
