@@ -100,11 +100,12 @@ p { margin: 0; }
    Los tamaños salen del ancho medido de cada línea en Nunito (541 / 797 / 1078 px a 100 px) → unidades cqw del contenedor. */
 .hero__copy h1 { display: grid; gap: 0; width: min(90vw, 880px); margin: 0 auto; container-type: inline-size; text-shadow: 0 6px 30px rgba(0,0,0,.55); letter-spacing: 0; }
 .hero__copy h1 > span { display: block; white-space: nowrap; text-align: center; }
-.hero__copy .l0 { font-size: 12.35cqw; font-weight: 900; line-height: .95; }
-.hero__copy .l1 { font-size: 12.35cqw; font-weight: 900; line-height: .95; margin-top: .02em; }
-.hero__copy .l2 { font-size: 9.15cqw; font-weight: 700; line-height: 1.05; margin-top: .08em; }
+/* PC/tablet: "Tú también" y "puedes exportar" del mismo tamaño (doc de Carlos, 7 set); 15% menor que antes para no crecer sobre la familia */
+.hero__copy .l0 { font-size: 10.5cqw; font-weight: 900; line-height: .95; }
+.hero__copy .l1 { font-size: 10.5cqw; font-weight: 900; line-height: .95; margin-top: .02em; }
+.hero__copy .l2 { font-size: 7.8cqw; font-weight: 700; line-height: 1.05; margin-top: .08em; }
 @supports not (container-type: inline-size) {
-  .hero__copy .l0 { font-size: clamp(2.6rem, 11vw, 6.8rem); } .hero__copy .l1 { font-size: clamp(2.6rem, 11vw, 6.8rem); } .hero__copy .l2 { font-size: clamp(1.9rem, 8.2vw, 5rem); }
+  .hero__copy .l0 { font-size: clamp(2.3rem, 9.4vw, 5.8rem); } .hero__copy .l1 { font-size: clamp(2.3rem, 9.4vw, 5.8rem); } .hero__copy .l2 { font-size: clamp(1.7rem, 7vw, 4.3rem); }
 }
 .hero__cta { position: relative; background: #fff; padding: clamp(1.2rem, 3vw, 2.2rem) 0 clamp(1.8rem, 4vw, 3rem); }
 .hero__cta .container { display: grid; justify-items: center; gap: 1rem; }
@@ -384,8 +385,14 @@ p { margin: 0; }
   .footer__sec { padding-right: 0; }
   .footer__panda { right: 3%; bottom: 40px; }
 }
+/* Tablet: la foto es 16:11 y las cabezas quedan altas; el titular va más chico y arriba para no tapar caras */
+@media (min-width: 700px) and (max-width: 1023px) {
+  .hero__copy { top: 58px; gap: .5rem; }
+  .hero__copy h1 { width: 66vw; }
+}
 /* ============ Desktop ============ */
 @media (min-width: 1024px) {
+  .hero__copy h1 { width: min(58vw, 880px); } /* el titular escala con la foto y no baja sobre las caras */
   .participantes .container { grid-template-columns: minmax(170px, 260px) minmax(0, 1fr) minmax(170px, 260px); grid-template-areas: "inca title panda" "inca mosaico panda" "inca cta panda"; column-gap: 2rem; }
   .participantes__mascota { height: clamp(300px, 30vw, 440px); }
   .participantes .cta { padding-bottom: 1.6rem; }
