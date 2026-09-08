@@ -13,7 +13,7 @@
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const fmt = (n) => new Intl.NumberFormat('es-PE').format(n);
   const state = {
-    q: '', cat: 'Todas', region: 'Todas', sort: 'votos', page: 1, perPage: 8, shown: 0,
+    q: '', cat: 'Todas', region: 'Todas', sort: 'recientes', page: 1, perPage: 10, shown: 0,
     votedId: Number(localStorage.getItem('expo_voted') || 0) || null,
     current: null,
     data: D.participantes.map(p => ({ ...p }))
@@ -163,32 +163,26 @@
     else if (state.sort === 'az') list.sort((a, b) => a.producto.localeCompare(b.producto, 'es'));
     return list;
   }
-  function renderGallery(append = false) {
-    // Carrusel horizontal con scroll infinito: pinta un lote y agrega el siguiente al acercarse al final (sin paginado)
+  function renderGallery(all = false) {
+    // Lista vertical: pinta los primeros perPage y, con "Ver todos los videos", el resto (sin ranking ni orden por votos)
     const grid = $('[data-grid]'); if (!grid) return;
     const list = filtered();
-    if (!append) { grid.innerHTML = ''; state.shown = 0; grid.scrollLeft = 0; }
-    const slice = list.slice(state.shown, state.shown + state.perPage);
-    const ranked = state.sort === 'votos' && state.cat === 'Todas' && state.region === 'Todas' && !state.q;
+    if (!all) { grid.innerHTML = ''; state.shown = 0; }
+    const slice = all ? list.slice(state.shown) : list.slice(0, state.perPage);
     const tpl = $('#tpl-card');
     slice.forEach((p, i) => {
       const node = tpl.content.firstElementChild.cloneNode(true);
-      fill(node, p, ranked ? state.shown + i + 1 : null);
+      fill(node, p, null);
       node.classList.add('reveal'); node.dataset.delay = String((i % 3) + 1);
       grid.appendChild(node);
     });
     state.shown += slice.length;
-    grid.dataset.more = state.shown < list.length ? '1' : '';
+    const rest = list.length - state.shown;
+    const more = $('[data-more]');
+    if (more) { more.hidden = rest <= 0; }
     const empty = $('[data-empty]'); if (empty) empty.hidden = list.length > 0;
     const count = $('[data-count]'); if (count) count.textContent = list.length;
     requestAnimationFrame(() => initReveal());
-  }
-  function renderRanking() {
-    const c = $('[data-ranking]'); if (!c) return;
-    const top = [...state.data].sort((a, b) => b.votos - a.votos).slice(0, 5);
-    renderList(c, '#tpl-rank', top, true, false);
-    const max = top[0]?.votos || 1; // barra de votos relativa al primer puesto
-    [...c.children].forEach((el, i) => el.style.setProperty('--p', (top[i].votos / max).toFixed(3)));
   }
   function initGallery() {
     if (!$('[data-grid]')) return;
@@ -209,10 +203,9 @@
     const reset = $('[data-reset]'); if (reset) reset.addEventListener('click', () => { state.q = ''; state.cat = 'Todas'; state.region = 'Todas'; if (q) q.value = ''; if (reg) reg.value = 'Todas'; $$('.chip').forEach((x, i) => x.classList.toggle('is-active', i === 0)); renderGallery(); });
     const demoReset = $('[data-demo-reset]');
     if (demoReset && !/demo/.test(location.search + location.hash)) demoReset.closest('a, button').hidden = true; // visible solo con ?demo=1
-    if (demoReset) demoReset.addEventListener('click', (e) => { e.preventDefault(); localStorage.removeItem('expo_voted'); state.votedId = null; renderRanking(); renderGallery(); toast('Modo demo: voto reiniciado.'); });
-    const grid = $('[data-grid]');
-    grid.addEventListener('scroll', () => { if (grid.dataset.more && grid.scrollLeft + grid.clientWidth > grid.scrollWidth - 320) renderGallery(true); }, { passive: true });
-    renderRanking(); renderGallery();
+    if (demoReset) demoReset.addEventListener('click', (e) => { e.preventDefault(); localStorage.removeItem('expo_voted'); state.votedId = null; renderGallery(); toast('Modo demo: voto reiniciado.'); });
+    const more = $('[data-more]'); if (more) more.addEventListener('click', () => { renderGallery(true); more.blur(); });
+    renderGallery();
     // deep link #video-ID → abrir
     const m = location.hash.match(/#video-(\d+)/);
     if (m) { const p = state.data.find(x => x.id === Number(m[1])); if (p) setTimeout(() => openVideo(p), 400); }
@@ -279,7 +272,7 @@
     p.votos += 1; state.votedId = p.id; localStorage.setItem('expo_voted', String(p.id));
     $$('[data-act="vote"]').forEach(b => { const q = state.data.find(x => x.id === Number(b.dataset.id)); if (q) syncVoteBtn(b, q); });
     $$(`[data-f="votos"]`).forEach(el => { const card = el.closest('[data-id]'); });
-    renderRanking(); if ($('[data-grid]')) renderGallery(); else initFeatured();
+    if ($('[data-grid]')) renderGallery(); else initFeatured();
     toast('¡Voto registrado! Gracias por apoyar a un exportador peruano.');
   }
   function initModals() {

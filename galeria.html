@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Videos y votación · EXPORTADORES 2026</title>
-<meta name="version" content="20260908-094221">
+<meta name="version" content="20260908-124015">
 <meta name="robots" content="noindex, nofollow"><!-- quitar antes del lanzamiento público -->
 <meta name="description" content="Mira los videos de los exportadores participantes y vota por tu favorito. Una persona, un voto verificado.">
 <meta name="theme-color" content="#0D3B8E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=20260908-094221">
-<link rel="stylesheet" href="css/pages.css?v=20260908-094221">
-<link rel="icon" href="assets/src/mascota-panda.png?v=20260908-094221">
+<link rel="stylesheet" href="css/styles.css?v=20260908-124015">
+<link rel="stylesheet" href="css/pages.css?v=20260908-124015">
+<link rel="icon" href="assets/src/mascota-panda.png?v=20260908-124015">
 </head>
 <body data-page="galeria" data-assets="assets/">
 
@@ -38,13 +38,13 @@
 </svg>
 
 
-<div class="curtain" aria-hidden="true"><img src="assets/cliente/logo-exportadores-2026.png?v=20260908-094221" alt=""><span class="curtain__bar"></span></div>
+<div class="curtain" aria-hidden="true"><img src="assets/cliente/logo-exportadores-2026.png?v=20260908-124015" alt=""><span class="curtain__bar"></span></div>
 <header class="header">
   <div class="header__waves" data-wavebg="#DCEFFB,#5FB3E8" data-h="300" data-amp="62"></div>
   <div class="container header__bar">
-    <a class="header__co" href="#" aria-label="Cosco Shipping"><img src="assets/cliente/logo-cosco-shipping-oficial.png?v=20260908-094221" alt="Cosco Shipping" width="1581" height="1007"></a>
-    <a class="header__brand" href="index.html" aria-label="Exportadores 2026"><img src="assets/cliente/logo-exportadores-2026.png?v=20260908-094221" alt="Exportadores 2026" width="1427" height="981"></a>
-    <a class="header__co header__co--right" href="#" aria-label="Puerto de Chancay"><img src="assets/cliente/logo-puerto-chancay-oficial.png?v=20260908-094221" alt="Puerto de Chancay" width="889" height="333"></a>
+    <a class="header__co" href="#" aria-label="Cosco Shipping"><img src="assets/cliente/logo-cosco-shipping-oficial.png?v=20260908-124015" alt="Cosco Shipping" width="1581" height="1007"></a>
+    <a class="header__brand" href="index.html" aria-label="Exportadores 2026"><img src="assets/cliente/logo-exportadores-2026.png?v=20260908-124015" alt="Exportadores 2026" width="1427" height="981"></a>
+    <a class="header__co header__co--right" href="#" aria-label="Puerto de Chancay"><img src="assets/cliente/logo-puerto-chancay-oficial.png?v=20260908-124015" alt="Puerto de Chancay" width="889" height="333"></a>
   </div>
   <nav class="nav container" aria-label="Principal">
     <a href="index.html" data-nav="index">Inicio</a><a href="index.html#etapas">Etapas</a><a href="galeria.html" data-nav="galeria">Videos y votación</a><a href="index.html#premio">Premio</a><a href="index.html#bases">Bases</a><a class="nav--cta" href="inscripcion.html" data-nav="inscripcion">Sube tu video</a>
@@ -61,39 +61,35 @@
   </section>
   <div class="wave wave--lg" data-shape="espuma" data-amp="34" data-from="#082A6B" data-to="#FFFFFF" data-layers="#1C4FB0,#5FB3E8,#DCEFFB"></div>
 
-  <section class="section" aria-label="Buscar y Top 5" style="padding-top:0">
+  <section class="section" aria-label="Buscar y filtrar" style="padding-top:0">
     <div class="container">
       <div class="toolbar reveal">
         <label class="search"><span class="sr-only">Buscar videos o participantes</span><input type="search" data-search placeholder="Buscar por producto, participante o región…" autocomplete="off"><svg><use href="#i-search"/></svg></label>
         <div class="chips" data-chips role="group" aria-label="Filtrar por categoría"></div>
         <div class="selects">
           <label class="select"><span class="sr-only">Región</span><select data-region></select><svg><use href="#i-chev"/></svg></label>
-          <label class="select"><span class="sr-only">Ordenar</span><select data-sort><option value="votos">Más votados</option><option value="recientes">Más recientes</option><option value="az">A – Z</option></select><svg><use href="#i-chev"/></svg></label>
+          <label class="select"><span class="sr-only">Ordenar</span><select data-sort><option value="recientes">Más recientes</option><option value="az">A – Z</option></select><svg><use href="#i-chev"/></svg></label>
         </div>
-      </div>
-      <!-- Top 5: tabla de posiciones en filas sobre blanco (5 set): número grande, miniatura, barra de votos. Formato distinto al carrusel de la galería -->
-      <div class="ranking reveal" data-delay="1" aria-labelledby="t-rank">
-        <div class="ranking__head"><h3 id="t-rank"><span class="live" aria-hidden="true"></span> Top 5 en vivo</h3><span class="muted">Se actualiza con cada voto</span></div>
-        <ol class="ranking__list" data-ranking></ol>
       </div>
     </div>
   </section>
 
-  <!-- Todos los videos: caja azul oscuro con olas y scroll horizontal (el formato que tenía el Top 5), fichas de colores intercalados rojo / celeste / blanco -->
-  <section class="section videos" aria-label="Videos participantes">
+  <!-- Todos los videos (8 set, pedido de Carlos): lista vertical, uno debajo de otro, 10 visibles y "Ver todos los videos".
+       Sin ranking ni orden por votos: nadie recibe más presencia por tener más votos. -->
+  <section class="section videos" aria-labelledby="t-videos">
+    <div class="wbg" data-wavebg="#C7E6F8,#5FB3E8" data-h="900" data-amp="64"></div>
     <div class="container">
-      <div class="videos__box">
-        <div class="videos__bg" data-wavebg="#1C4FB0,#5FB3E8" data-h="420" data-amp="56" data-wavebg-bottom="#0D3B8E,#1C4FB0" data-bottom=".6"></div>
-        <div class="videos__in">
-          <div class="result-count"><span><strong data-count>0</strong> videos <small class="swipe">Desliza para ver todos</small></span><button class="btn btn--ghost btn--sm" type="button" data-reset>Limpiar filtros</button></div>
-          <div class="cards" data-grid></div>
-          <div class="empty" data-empty hidden>
-            <img src="assets/src/mascota-inca.png?v=20260908-094221" alt="" width="507" height="1032">
-            <h3>No encontramos videos con esa búsqueda</h3><p>Prueba con otra palabra o limpia los filtros.</p>
-            <button class="btn btn--outline btn--sm" type="button" data-reset>Ver todos</button>
-          </div>
-        </div>
+      <div class="videos__head">
+        <h2 id="t-videos">Los videos participantes <small><strong data-count>0</strong> videos</small></h2>
+        <button class="btn btn--ghost btn--sm" type="button" data-reset>Limpiar filtros</button>
       </div>
+      <div class="cards" data-grid></div>
+      <div class="empty" data-empty hidden>
+        <img src="assets/src/mascota-inca.png?v=20260908-124015" alt="" width="507" height="1032">
+        <h3>No encontramos videos con esa búsqueda</h3><p>Prueba con otra palabra o limpia los filtros.</p>
+        <button class="btn btn--outline btn--sm" type="button" data-reset>Ver todos</button>
+      </div>
+      <div class="ver-todos"><button class="btn btn--azul" type="button" data-more hidden><svg><use href="#i-chev"/></svg> Ver todos los videos</button></div>
     </div>
   </section>
 
@@ -106,7 +102,7 @@
       <p class="reveal" data-delay="2">Inscripciones abiertas hasta el 11 de octubre. Graba, sube a YouTube y llena tu ficha en 5 minutos.</p>
       <a class="pill pill--white pill--giant reveal" data-delay="3" href="inscripcion.html"><svg><use href="#i-up"/></svg> Sube tu video</a>
     </div>
-    <img class="mascota mascota--inca" src="assets/src/mascota-inca.png?v=20260908-094221" alt="" loading="lazy">
+    <img class="mascota mascota--inca" src="assets/src/mascota-inca.png?v=20260908-124015" alt="" loading="lazy">
   </section>
 </main>
 
@@ -116,14 +112,14 @@
     <div class="footer__card">
       <div>
         <p class="footer__quote">“El puerto de Chancay es <em>para todos los peruanos</em>”</p>
-        <div class="footer__logos" style="margin-top:1.2rem"><img src="assets/cliente/logo-cosco-shipping-oficial.png?v=20260908-094221" alt="Cosco Shipping"><img src="assets/cliente/logo-puerto-chancay-oficial.png?v=20260908-094221" alt="Puerto de Chancay"></div>
+        <div class="footer__logos" style="margin-top:1.2rem"><img src="assets/cliente/logo-cosco-shipping-oficial.png?v=20260908-124015" alt="Cosco Shipping"><img src="assets/cliente/logo-puerto-chancay-oficial.png?v=20260908-124015" alt="Puerto de Chancay"></div>
       </div>
       <div class="footer__sec">
         <nav class="footer__nav" aria-label="Menú principal"><a href="index.html">Inicio</a><a href="index.html#etapas">Etapas</a><a href="galeria.html">Videos y votación</a><a href="index.html#premio">Premio</a><a href="index.html#bases">Bases</a><a class="is-cta" href="inscripcion.html">Sube tu video</a></nav>
         <nav class="footer__links" aria-label="Enlaces secundarios"><a href="#">Privacidad</a><a href="#">Términos</a><a href="mailto:hola@exportadores2026.pe">Contacto</a><a href="#" data-demo-reset title="Solo para la demo">Reiniciar voto (demo)</a></nav>
       </div>
     </div>
-    <img class="footer__panda" src="assets/src/mascota-panda.png?v=20260908-094221" alt="" loading="lazy">
+    <img class="footer__panda" src="assets/src/mascota-panda.png?v=20260908-124015" alt="" loading="lazy">
     <div class="footer__bottom"><small>© 2026 EXPORTADORES 2026 · Lima, Perú</small></div>
   </div>
 </footer>
@@ -173,24 +169,21 @@
 
 <template id="tpl-card">
   <article class="card">
-    <button class="card__media" type="button" data-act="play" aria-label="Reproducir video"><img data-f="thumb" alt=""><span class="card__play"><svg><use href="#i-play"/></svg></span><span class="card__rank" data-f="rank"></span></button>
+    <button class="card__media" type="button" data-act="play" aria-label="Reproducir video"><img data-f="thumb" alt=""><span class="card__play"><svg><use href="#i-play"/></svg></span></button>
     <div class="card__body">
       <span class="card__cat" data-f="categoria"></span>
       <h3 class="card__title" data-f="producto"></h3>
-      <div class="card__who"><span class="card__avatar" data-f="initials"></span><span><span data-f="titular"></span> · <span data-f="region"></span></span></div>
+      <div class="card__who"><span data-f="titular"></span> · <span data-f="region"></span></div>
       <div class="card__foot"><span class="card__votes"><svg><use href="#i-vote"/></svg><span data-f="votos"></span> <small>votos</small></span><button class="btn btn--primary btn--sm" type="button" data-act="vote">Votar</button></div>
     </div>
   </article>
 </template>
-<template id="tpl-rank">
-  <li class="rank"><a data-href="#video-{id}" href="#"><span class="rank__pos" data-f="rank"></span><span class="rank__thumb"><img data-f="thumb" alt=""></span><span class="rank__info"><b data-f="producto"></b><small><span data-f="titular"></span> · <span data-f="region"></span></small><span class="rank__bar" aria-hidden="true"><i></i></span></span><span class="rank__votes"><span data-f="votos"></span><small>votos</small></span></a></li>
-</template>
 
-<script src="js/shared/data.js?v=20260908-094221"></script>
-<script src="js/shared/app.js?v=20260908-094221"></script>
-<script src="js/app.js?v=20260908-094221"></script>
+<script src="js/shared/data.js?v=20260908-124015"></script>
+<script src="js/shared/app.js?v=20260908-124015"></script>
+<script src="js/app.js?v=20260908-124015"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/motion.js?v=20260908-094221"></script>
+<script src="js/motion.js?v=20260908-124015"></script>
 </body>
 </html>
