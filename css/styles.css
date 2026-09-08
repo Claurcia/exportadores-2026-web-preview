@@ -207,7 +207,7 @@ p { margin: 0; }
 .pasos .container { position: relative; }
 .pasos .title-row { margin-bottom: clamp(1.8rem, 4vw, 3rem); }
 .steps { display: grid; gap: 1.2rem; }
-.step { position: relative; display: grid; gap: 0; background: #fff; border: 1.5px solid var(--azul); border-radius: var(--r); overflow: hidden; text-decoration: none; color: inherit; transition: transform .25s var(--ease); }
+.step { position: relative; display: grid; grid-template-rows: auto 1fr; gap: 0; background: #fff; border: 1.5px solid var(--azul); border-radius: var(--r); overflow: hidden; text-decoration: none; color: inherit; transition: transform .25s var(--ease); }
 .step:hover { transform: translateY(-4px); }
 .step__photo { position: relative; aspect-ratio: 4 / 3; background: var(--cel2); }
 .step__photo img { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 25%); }
