@@ -163,12 +163,12 @@
     else if (state.sort === 'az') list.sort((a, b) => a.producto.localeCompare(b.producto, 'es'));
     return list;
   }
-  function renderGallery(all = false) {
-    // Lista vertical: pinta los primeros perPage y, con "Ver todos los videos", el resto (sin ranking ni orden por votos)
+  function renderGallery(append = false) {
+    // Lista vertical con scroll infinito: pinta perPage y agrega otro lote al llegar al final (sin ranking ni orden por votos)
     const grid = $('[data-grid]'); if (!grid) return;
     const list = filtered();
-    if (!all) { grid.innerHTML = ''; state.shown = 0; }
-    const slice = all ? list.slice(state.shown) : list.slice(0, state.perPage);
+    if (!append) { grid.innerHTML = ''; state.shown = 0; }
+    const slice = list.slice(state.shown, state.shown + state.perPage);
     const tpl = $('#tpl-card');
     slice.forEach((p, i) => {
       const node = tpl.content.firstElementChild.cloneNode(true);
@@ -178,8 +178,8 @@
     });
     state.shown += slice.length;
     const rest = list.length - state.shown;
-    const more = $('[data-more]');
-    if (more) { more.hidden = rest <= 0; }
+    const more = $('[data-more]'); if (more) more.hidden = rest <= 0 || state.auto;
+    const fin = $('[data-fin]'); if (fin) fin.hidden = !(rest <= 0 && list.length > state.perPage);
     const empty = $('[data-empty]'); if (empty) empty.hidden = list.length > 0;
     const count = $('[data-count]'); if (count) count.textContent = list.length;
     requestAnimationFrame(() => initReveal());
@@ -204,7 +204,11 @@
     const demoReset = $('[data-demo-reset]');
     if (demoReset && !/demo/.test(location.search + location.hash)) demoReset.closest('a, button').hidden = true; // visible solo con ?demo=1
     if (demoReset) demoReset.addEventListener('click', (e) => { e.preventDefault(); localStorage.removeItem('expo_voted'); state.votedId = null; renderGallery(); toast('Modo demo: voto reiniciado.'); });
-    const more = $('[data-more]'); if (more) more.addEventListener('click', () => { renderGallery(true); more.blur(); });
+    const moreBtn = $('[data-more]'); if (moreBtn) moreBtn.addEventListener('click', () => { renderGallery(true); moreBtn.blur(); });
+    // scroll infinito: al asomar el pie de la lista se carga el siguiente lote
+    const sentinel = $('[data-sentinel]');
+    state.auto = !!(sentinel && 'IntersectionObserver' in window);
+    if (state.auto) new IntersectionObserver(es => { if (es.some(e => e.isIntersecting) && state.shown < filtered().length) renderGallery(true); }, { rootMargin: '400px 0px' }).observe(sentinel);
     renderGallery();
     // deep link #video-ID → abrir
     const m = location.hash.match(/#video-(\d+)/);

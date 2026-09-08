@@ -88,7 +88,8 @@
 .card:nth-child(3n+1) .card__votes small { color: rgba(255,255,255,.85); } .card:nth-child(3n+2) .card__votes small { color: var(--azul2); }
 .ver-todos { display: grid; justify-items: center; margin-top: 1.4rem; }
 .ver-todos .btn { min-height: 58px; padding-inline: 2rem; font-size: 1rem; width: min(100%, 420px); }
-.ver-todos .btn svg { transform: rotate(0); }
+.ver-todos { min-height: 40px; }
+.fin { margin: 0; color: var(--gris); font-weight: 700; text-align: center; }
 
 .pager { display: flex; justify-content: center; gap: .4rem; margin-top: 2rem; flex-wrap: wrap; }
 .pager button { min-width: 44px; min-height: 44px; border-radius: 999px; border: 2px solid var(--cel2); background: #fff; font: 800 .95rem/1 var(--display); color: var(--azul); }
