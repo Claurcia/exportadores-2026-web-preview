@@ -160,12 +160,19 @@ p { margin: 0; }
 .tagc { display: inline-flex; align-items: center; gap: .45rem; background: #fff; color: var(--azul); border-radius: 999px; padding: .55rem .9rem; font: 800 .86rem/1 var(--display); }
 .tagc svg { width: 16px; height: 16px; flex: none; }
 .tagc--red { background: var(--rojo); color: #fff; }
-.etapa__body p { color: rgba(255,255,255,.92); font-size: 1rem; }
-.etapa__body p b { color: var(--cel); }
-.etapa__hi { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 1rem; background: var(--cel2); color: var(--azul2); border-radius: 22px; padding: 1rem 1.2rem; width: 100%; box-sizing: border-box; }
-.etapa__hi b { font: 900 clamp(2.4rem, 4vw, 3.4rem)/1 var(--display); color: var(--rojo); }
-.etapa__hi span { font-size: .96rem; line-height: 1.35; }
-.etapa__hi strong { color: var(--azul); }
+.etapa__body > p { color: rgba(255,255,255,.92); font-size: 1rem; }
+.etapa__body > p b { color: var(--cel); }
+/* Burbuja celeste (rediseño 8 set, pedido de Carlos): titular "número + qué es" y debajo la explicación, para que se lea de un vistazo */
+.etapa__hi { display: grid; gap: .55rem; background: var(--cel2); color: var(--azul2); border-radius: 22px; padding: 1rem 1.2rem 1.1rem; width: 100%; box-sizing: border-box; }
+.etapa__hi p, .etapa__hi ul { margin: 0; }
+.hi__top { line-height: 1.05; }
+.hi__top b { font: 900 clamp(2.2rem, 3.6vw, 3rem)/1 var(--display); color: var(--rojo); margin-right: .35rem; vertical-align: -.08em; }
+.hi__top strong { font: 900 clamp(1.2rem, 2vw, 1.5rem)/1.1 var(--display); color: var(--azul); }
+.etapa .hi__sub, .etapa .hi__list span { color: var(--azul2); }
+.hi__sub { font-size: .98rem; line-height: 1.4; max-width: 34ch; }
+.hi__list { list-style: none; padding: 0; display: grid; gap: .3rem; }
+.hi__list li { display: grid; grid-template-columns: 1.7rem 1fr; align-items: baseline; gap: .3rem; font-size: .98rem; line-height: 1.35; }
+.hi__list b { font: 900 1.25rem/1 var(--display); color: var(--rojo); text-align: center; }
 .etapa .pill { margin-top: .2rem; border-color: #fff; color: #fff; }
 .etapa .pill:hover { background: #fff; color: var(--azul); }
 .stage { position: relative; display: grid; gap: 1rem; }
@@ -355,7 +362,7 @@ p { margin: 0; }
   .etapa__title { order: 1; grid-row: 1; align-self: center; padding-right: 0; }
   .etapa__n { font-size: 2.2rem; } .etapa__name { font-size: 1.45rem; }
   .etapa__meta { order: 3; }
-  .etapa__body p { order: 5; }
+  .etapa__body > p { order: 5; }
   .etapa__hi { order: 6; }
   .etapa .pill { order: 7; }
 }
