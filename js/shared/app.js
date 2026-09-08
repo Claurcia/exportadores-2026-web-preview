@@ -13,10 +13,10 @@
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const fmt = (n) => new Intl.NumberFormat('es-PE').format(n);
   const state = {
-    q: '', cat: 'Todas', region: 'Todas', sort: 'recientes', page: 1, perPage: 10, shown: 0,
+    q: '', cat: 'Todas', region: 'Todas', sort: 'azar', page: 1, perPage: 10, shown: 0,
     votedId: Number(localStorage.getItem('expo_voted') || 0) || null,
     current: null,
-    data: D.participantes.map(p => ({ ...p }))
+    data: D.participantes.map(p => ({ ...p, azar: Math.random() })) // azar: orden aleatorio distinto en cada carga (imparcialidad)
   };
 
   /* ---------- Utilidades ---------- */
@@ -158,7 +158,8 @@
       (state.region === 'Todas' || p.region === state.region) &&
       (!q || [p.producto, p.titular, p.region, p.categoria].join(' ').toLowerCase().includes(q))
     );
-    if (state.sort === 'votos') list.sort((a, b) => b.votos - a.votos);
+    if (state.sort === 'azar') list.sort((a, b) => a.azar - b.azar);
+    else if (state.sort === 'votos') list.sort((a, b) => b.votos - a.votos);
     else if (state.sort === 'recientes') list.sort((a, b) => b.id - a.id);
     else if (state.sort === 'az') list.sort((a, b) => a.producto.localeCompare(b.producto, 'es'));
     return list;

@@ -87,5 +87,12 @@
     const page = document.body.dataset.page;
     $$('[data-nav]').forEach(a => a.classList.toggle('is-active', a.dataset.nav === page));
   }
-  document.addEventListener('DOMContentLoaded', () => { initWaves(); initReveal(); initDates(); initPending(); initNav(); });
+  // Mosaico de participantes: orden distinto en cada carga, nadie ocupa siempre el primer lugar
+  function initMosaico() {
+    const g = document.querySelector('.mosaico__grid'); if (!g) return;
+    const kids = [...g.children];
+    for (let i = kids.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [kids[i], kids[j]] = [kids[j], kids[i]]; }
+    kids.forEach(k => g.appendChild(k));
+  }
+  document.addEventListener('DOMContentLoaded', () => { initMosaico(); initWaves(); initReveal(); initDates(); initPending(); initNav(); });
 })();
